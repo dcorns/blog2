@@ -8,6 +8,7 @@ We want this assignment to feel like a 'week on the job.' And by that we mean, w
 
 You can download the view that you are to complete [here](https://github.com/SEA-Design-Dev/mean-stack-1/tree/master/comps). It is provided as a Photoshop format, if you do not have access to Photoshop, other applications like Pixelmator are able to open these layered files as well.
 
+**Note:** There are pagination elements (```[Prev]    [1][2][3]   [Next]```) at the bottom of the comp that shows the list of blog posts. You do not need to worry about building these elements. We'll cover those in lecture if time permits (but that will likely be covered next week).
 
 ## The spec
 
