@@ -66,7 +66,7 @@ gulp.task('angularTest', ['webpackTests'], function(){
 
 gulp.task('cleanBuild', function(){
   del([
-    'public/*', 'public/css/**/*'
+    'public/*', 'public/css/**/*', 'public/views'
   ])
 });
 

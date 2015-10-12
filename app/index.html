@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="blog">
 <head lang="en">
     <meta charset="UTF-8">
     <!--<link rel="stylesheet" href="css/normalize.css" type="text/css">-->
@@ -11,10 +11,9 @@
 <main>
     <aside>
         <section class = "highlight">
-            <h1>Blog</h1>
-            <p>Bla Bla Bla Bla</p>
+            <div ng-view></div>
         </section>
-        <nav class="highlight-nav">HOME</nav>
+        <nav class="highlight-nav"><a href="/#/blog">HOME</a><a href="/#/user/new">JOIN</a><a href="/#/user/login">login</a></nav>
     </aside>
 
     <!--The following section should be repeated for each available blog unless view more is selected, then it should be a single article-->
