@@ -13,7 +13,6 @@ module.exports = function(app){
       password: ''
     };
     $scope.addUser = function(){
-      console.log('addUser');
       $http.post('../users', $scope.user)
         .then(function success(res){
          alert('New user ' + res.data.username + ' saved!');
@@ -25,7 +24,7 @@ module.exports = function(app){
       });
     };
     $scope.userLogin = function(){
-      $http.post('../users/login', $scope.user)
+      $http.post('../login', $scope.user)
         .then(function success(res){
           alert('Login Complete');
           $location.url('/#/blog');

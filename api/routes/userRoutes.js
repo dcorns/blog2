@@ -76,17 +76,21 @@ module.exports = function(app){
 
   app.route('/login')
     .post(function(req, res) {
-      console.dir(req.body);
-      var query = User.where({email: req.body.email, password: req.body.password});
-      //console.dir(query);
-      var user = User.findOne(query);
-        console.dir(user);
-        user.lastLogin = new Date();
-        user.save(function(err) {
-          if (err) res.send(err);
-          console.dir(user);
-          res.json(user);
-        });
+      User.findOne({'email': req.body.email, 'password': req.body.password},'email username', function(err, user){
+        if (err) {
+          console.dir(err);
+          res.json(err);
+        }
+        if(user){
+          user.lastLogin = new Date();
+          user.save(function(err) {
+            if (err) res.send(err);
+            res.json(user);
+          });
+        }else{
+          res.json({error: 'authentication failed'});
+        }
       });
+    });
 
 };
