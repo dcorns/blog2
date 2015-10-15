@@ -15,20 +15,24 @@ module.exports = function(app){
         templateUrl: 'views/join.html',
         controller: 'userController'
       })
-      .when('/blog',{
+      .when('/blog/allblogs',{
         templateUrl: 'views/allBlogs.html',
         controller: 'blogController'
       })
-      .when('/blog/:blog_id/edit', {
+      //.when('/blog/edit/:blog_id/', {
+      //  templateUrl: 'views/editBlog.html',
+      //  controller: 'blogController'
+      //})
+      //.when('/blog/:blog_id', {
+      //  templateUrl: 'views/viewBlog.html',
+      //  controller: 'blogController'
+      //})
+      .when('/blog/newblog',{
         templateUrl: 'views/editBlog.html',
         controller: 'blogController'
       })
-      .when('/blog/:blog_id', {
-        templateUrl: 'views/viewBlog.html',
-        controller: 'blogController'
-      })
       .otherwise({
-        redirectTo: '/blog'
+        redirectTo: '/blog/allblogs'
       });
   }]);
 };

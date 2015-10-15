@@ -6,7 +6,7 @@
 'use strict';
 
 module.exports = function(app){
-  app.controller('userController', function($scope, $http, $location){
+  app.controller('userController', function($scope, $http, $location, $window){
     $scope.user = {
       username: '',
       email: '',
@@ -26,6 +26,8 @@ module.exports = function(app){
     $scope.userLogin = function(){
       $http.post('../login', $scope.user)
         .then(function success(res){
+          console.dir(res.data);
+          $window.sessionStorage.setItem('blogLogin', res.data.id);
           alert('Login Complete');
           $location.url('/#/blog');
         },

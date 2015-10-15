@@ -20,9 +20,7 @@ module.exports = function(app){
       blog.save(function(err) {
         if (err)
           res.send(err);
-        res.json({
-          message: 'Blog Posted!'
-        });
+        res.json(blog);
       });
     })
 
