@@ -27,14 +27,15 @@ module.exports = function(app){
       $http.post('../login', $scope.user)
         .then(function success(res){
           console.dir(res.data);
-          $window.sessionStorage.setItem('blogLogin', res.data.id);
+          $window.sessionStorage.setItem('blogLogin', res.data._id);
+          $window.sessionStorage.setItem('isBlogUser', true);
           alert('Login Complete');
           $location.url('/#/blog');
         },
       function failure(res){
         alert('Login Failed');
         console.dir(res);
-      })
+      });
     };
   });
 };
