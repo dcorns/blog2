@@ -2,5 +2,6 @@
 <div dir-paginate="blog in blogApp.blogs | itemsPerPage: 3">
     <h2>{{blog.title}}</h2>
     <p>{{blog.article}}</p>
+    <button ng-click="blogApp.showOne($index)">READ ON</button>
 </div>
 <dir-pagination-controls></dir-pagination-controls>

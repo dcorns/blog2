@@ -23,10 +23,10 @@ module.exports = function(app){
       //  templateUrl: 'views/editBlog.html',
       //  controller: 'blogController'
       //})
-      //.when('/blog/:blog_id', {
-      //  templateUrl: 'views/viewBlog.html',
-      //  controller: 'blogController'
-      //})
+      .when('/blog/oneblog', {
+        templateUrl: 'views/viewBlog.html',
+        controller: 'blogController'
+      })
       .when('/blog/newblog',{
         templateUrl: 'views/editBlog.html',
         controller: 'blogController'
