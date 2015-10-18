@@ -4,4 +4,4 @@
     <p>{{blog.article}}</p>
     <button ng-click="blogApp.showOne($index)">READ ON</button>
 </div>
-<dir-pagination-controls></dir-pagination-controls>
+<dir-pagination-controls on-page-change="setPageNumber(newPageNumber)"></dir-pagination-controls>

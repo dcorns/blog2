@@ -7,7 +7,7 @@
 
 module.exports = function(app){
   app.controller('blogController', function($scope, $window, $http, blogService){
-    $scope.blogApp = {}; $scope.blogApp.blogs = []; $scope.blogApp.oneBlog = {};
+    $scope.blogApp = {}; $scope.blogApp.blogs = []; $scope.blogApp.oneBlog = {title: '', article: ''};
 
     $scope.blogApp.user ={id:''};
     $scope.blogApp.user.id = $window.sessionStorage.getItem('blogLogin');
@@ -18,6 +18,9 @@ module.exports = function(app){
       console.log('idx ', idx);
       $scope.blogApp.idx = idx;
       blogService.showOneBlog($scope);
+    };
+    $scope.setPageNumber = function(pgn){
+      blogService.setPageNumber(pgn);
     };
     blogService.getBlogs($scope);
   });
