@@ -15,10 +15,10 @@ module.exports = function(app){
         templateUrl: 'views/join.html',
         controller: 'userController'
       })
-      .when('/blog/allblogs',{
-        templateUrl: 'views/allBlogs.html',
-        controller: 'blogController'
-      })
+      //.when('/blog/allblogs',{
+      //  templateUrl: 'views/viewBlog.html',
+      //  controller: 'blogController'
+      //})
       //.when('/blog/edit/:blog_id/', {
       //  templateUrl: 'views/editBlog.html',
       //  controller: 'blogController'
@@ -32,7 +32,7 @@ module.exports = function(app){
         controller: 'blogController'
       })
       .otherwise({
-        redirectTo: '/blog/allblogs'
+        redirectTo: '/blog/oneblog'
       });
   }]);
 };
