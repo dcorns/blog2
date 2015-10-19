@@ -13,5 +13,6 @@ require('angular-utils-pagination');
   require('./routes')(app);
   require('./controllers/blogController')(app);
   require('./controllers/userController')(app);
+  require('./controllers/homeController')(app);
   require('./services/blogService')(app);
 }());

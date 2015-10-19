@@ -15,7 +15,6 @@ module.exports = function(app){
       blogService.postNew($scope);
     };
     $scope.blogApp.showOne = function(idx){
-      console.log('idx ', idx);
       $scope.blogApp.idx = idx;
       blogService.showOneBlog($scope);
     };

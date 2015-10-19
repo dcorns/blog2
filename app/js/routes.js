@@ -31,8 +31,12 @@ module.exports = function(app){
         templateUrl: 'views/editBlog.html',
         controller: 'blogController'
       })
+      .when('/blog/home',{
+        templateUrl: 'views/home.html',
+        controller: 'homeController'
+      })
       .otherwise({
-        redirectTo: '/blog/oneblog'
+        redirectTo: '/blog/home'
       });
   }]);
 };
