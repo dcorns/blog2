@@ -14,11 +14,12 @@ module.exports = function(app){
       $http.get('../blog')
         .then(function success(res){
           $scope.blogApp.blogs = res.data || [];
+          console.log($scope.blogApp.blogs.length);
+          console.dir($scope.blogApp.oneBlog);
           if($scope.blogApp.blogs.length > 0){
             $scope.blogApp.oneBlog = oneBlog || {title: $scope.blogApp.blogs[0].title, article: $scope.blogApp.blogs[0].article};
           }
           else $scope.blogApp.oneBlog = {};
-          pagenumber = 0;
         },
         function failure(res){
           alert('Blog Requisition Failed!');
